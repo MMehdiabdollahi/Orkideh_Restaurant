@@ -1,0 +1,29 @@
+
+
+
+<!-- Start Gallery -->
+<div class="gallery-box">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading-title text-center">
+                    <h2>Gallery</h2>
+                    <p>You can see our foods here ! just enjoy . . . </p>
+                </div>
+            </div>
+        </div>
+        <div class="tz-gallery">
+            <div class="row">
+                {% for a in pics %}
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <a class="lightbox" href="{{ a.homepic.url }}">
+                            <img class="img-fluid" src="{{ a.homepic.url }}" alt="">
+                        </a>	
+                    </div><br>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Gallery -->

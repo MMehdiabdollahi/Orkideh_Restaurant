@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Blog</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+	
+	<!-- Start blog details -->
+	<div class="blog-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>{{blog.title}}</h2>
+						<p>{{blog.description}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xl-8 col-lg-8 col-12">
+					<div class="blog-inner-details-page">
+						<div class="blog-inner-box">
+							<div class="side-blog-img">
+								<img class="img-fluid" src="{{blog.image.url}}" style="width: 700px;" alt="">							
+								<div class="date-blog-up">
+									{{blog.created_at|date:"Y m d"}}
+								</div>
+							</div>
+							<div class="inner-blog-detail details-page">
+								<h3>{{blog.description}}</h3>
+								<ul>
+									<li><i class="zmdi zmdi-account"></i>Posted By : <span>{{blog.author}}</span></li>
+									<li>|</li>
+									<li><i class="zmdi zmdi-time"></i>Time : <span>{{blog.created_at.time}}</span></li>
+								</ul>
+								<p dir="rtl">{{blog.content}}</p>
+								
+							</div>
+						</div>
+
+					</div>
+				</div>
+			
+				<div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 blog-sidebar">
+					<div class="right-side-blog">
+						
+						<h3>Categories</h3>
+						<div class="blog-categories">
+							<ul>
+                                {% for cat in categories %}
+								<li><a href="#"><span>{{cat.title}}</span></a></li>
+                                {% endfor %}
+							</ul>
+						</div>
+						<h3>Recent Post</h3>
+						<div class="post-box-blog">
+							<div class="recent-post-box">
+                                {% for blog in recents %}
+								<div class="recent-box-blog">
+									<div class="recent-img">
+										<img class="img-fluid" src="{{blog.image.url}}" style="height: 70px;width: 70px;" alt="">
+									</div>
+									<div class="recent-info">
+										<ul>
+											<li><i class="zmdi zmdi-account"></i>Posted By : <span>{{blog.author}}</span></li>
+											<li>|</li>
+											<li><i class="zmdi zmdi-time"></i>Time : <span>{{blog.created_at|date:"Y m d"}}</span></li>
+										</ul>
+										<h4>{{blog.description}}</h4>
+									</div>
+								
+                                
+                                
+                                </div>
+                                {% endfor %}
+							</div>
+						</div>
+						<h3>Recent Tag</h3>
+						<div class="blog-tag-box">
+							<ul class="list-inline tag-list">
+                                {% for tag in tags %}
+								<li class="list-inline-item"><a href="#">{{tag.title}}</a></li>
+                                {% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+	<!-- End details -->
+	
+
+	
+{% endblock content %}

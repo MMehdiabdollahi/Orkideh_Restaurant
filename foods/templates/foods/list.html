@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+	{% block content %}
+    <!-- Start slides -->
+	<div id="slides" class="cover-slides">
+		<ul class="slides-container">
+			{% for slider in sliderpic %}
+			<li class="text-center">
+				<img src="{{ slider.sliderpic.url }}" alt="">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Welcome To <br> Orkideh Restaurant</strong></h1>
+							<p class="m-b-40">Customers are valuable to us as gold, because they are authentic and precious.</p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="/reservation/">Reservation</a></p>
+						</div>
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+		</ul>
+		<div class="slides-navigation">
+			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+		</div>
+	</div>
+	<!-- End slides -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-12">
+					<img src="{% static 'images/about-img.jpg' %}" alt="" class="img-fluid">
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
+					<div class="inner-column">
+						<h1>Welcome To <span>Orkideh Restaurant</span></h1>
+						<h4>Little Story</h4>
+						<p>With more than 60 years of experience, Orchid Chain Restaurants is proud to host your friendly and business circles, celebrations and events in 7 branches across the country. In order to be the best for you, we have prepared a complete menu to suit all tastes and tastes, relying on the art of skilled and experienced chefs, and using global standards and various styles of modern architecture and designs, a pleasant atmosphere for a meal. We have created open and closed restaurants in the form of Gardoon restaurant. </p>
+						<a class="btn btn-lg btn-circle btn-outline-new-white" href="/reservation/">Reservation</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+	
+	<!-- Start QT -->
+	<div class="qt-box qt-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto text-left">
+					<p class="lead ">
+						" If you're not the one cooking, stay out of the way and compliment the chef. "
+					</p>
+					<span class="lead">Michael Strahan</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End QT -->
+	
+	<!-- Start Menu -->
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Orkideh Special Menu</h2>
+						<p>In what environment or place , do you like to eat? the choice is yours.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="special-menu text-center">
+						<div class="button-group filter-button-group">
+							<button class="active">All</button>
+						</div>
+					</div>
+				</div>
+			</div>
+				
+			<div class="row special-list">
+				{% for food in foods %}
+				
+					<div class="col-lg-4 col-md-6 special-grid">
+						<div class="gallery-single fix">
+							<img src="{{ food.photo.url }}" class="img-fluid" alt="Image" style="height:200px; width: 500px;">
+							<div class="why-text">
+								<h4>{{food.name}}</h4>
+								<p>{{food.description}}</p>
+								<h5>{{food.price}} $</h5>
+							</div>
+						</div>
+					</div>
+				
+				{% endfor %}
+				
+
+				
+			</div>
+		</div>
+	</div>
+	<!-- End Menu -->
+	
+	{% include 'foods/gallery.html'%}
+	
+
+	
+
+	{% endblock content %}
+	

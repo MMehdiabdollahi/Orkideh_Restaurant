@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+	{% block content %}
+	
+	<!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>About Us</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header -->
+	
+	<!-- Start About -->
+	<div class="about-section-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-6">
+					<img src="{% static 'images/about-img.jpg' %}" alt="" class="img-fluid">
+				</div>
+				<div class="col-lg-6 col-md-6 text-center">
+					<div class="inner-column">
+						<h1>Welcome To <span>Orkideh Restaurant</span></h1>
+						<h4>Little Story</h4>
+						<p>With more than 60 years of experience, Orchid Chain Restaurants is proud to host your friendly and business circles, celebrations and events in 7 branches across the country. In order to be the best for you, we have prepared a complete menu to suit all tastes and tastes, relying on the art of skilled and experienced chefs, and using global standards and various styles of modern architecture and designs, a pleasant atmosphere for a meal. We have created open and closed restaurants in the form of Gardoon restaurant. </p>
+						
+						<a class="btn btn-lg btn-circle btn-outline-new-white" href="/book/">Reservation</a>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="inner-pt">
+						<p>With more than 60 years of experience, Orchid Chain Restaurants is proud to host your friendly and business circles, celebrations and events in 7 branches across the country. In order to be the best for you, we have prepared a complete menu to suit all tastes and tastes, relying on the art of skilled and experienced chefs, and using global standards and various styles of modern architecture and designs, a pleasant atmosphere for a meal. We have created open and closed restaurants in the form of Gardoon restaurant. </p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End About -->
+	
+    {% endblock %}
